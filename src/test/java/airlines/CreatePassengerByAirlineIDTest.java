@@ -1,6 +1,7 @@
 package airlines;
 
 import io.restassured.response.Response;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,8 +12,14 @@ public class CreatePassengerByAirlineIDTest extends AirlinesApi{
 
     @Test
     public void createPassengerByAirLineIdTest() throws IOException {
-        Map<String,Object> requestPayload = Payloads.createPassengerByAirlineIdPayloadFromMap("John Dell","250","73dd5420-3bf9-48f3-a0b6-17cf7aa61b19");
-        Response response =createPassengerByAirLineID(requestPayload);
+
+        Map<String, Object> getData = AirlinesBaseTest.getAirlineApiEndPoint();
+        String endPoint = (String) getData.get("CreateAirLineEndPoint");
+
+        JSONObject jsonInputRequest = AirlinesBaseTest.getJsonInputRequestBody(this.getClass().getSimpleName());
+        JSONObject jsonPassengerByAirlineIDRequestPayload = (JSONObject) jsonInputRequest.get("CreatePassengerByAirLineIDTest");
+
+        Response response = createAirLines(endPoint,jsonPassengerByAirlineIDRequestPayload);
         Assert.assertEquals(response.getStatusCode(), 200);
     }
 }

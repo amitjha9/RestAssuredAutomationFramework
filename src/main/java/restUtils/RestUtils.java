@@ -6,14 +6,21 @@ import io.restassured.response.Response;
 import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
+import org.json.simple.JSONObject;
 import reporting.ExtentReportManager;
-
 import java.util.Map;
-import java.util.stream.Collectors;
+
 
 public class RestUtils {
 
-    private static RequestSpecification getRequestSpecification(String endPoint, Object requestPayload, Map<String, String> headers) {
+    private static RequestSpecification getRequestSpecificationGet(String endPoint, Map<String, String> headers, Map<String,String> queryParams) {
+        return RestAssured.given()
+                .baseUri(endPoint)
+                .contentType(ContentType.JSON)
+                .headers(headers);
+    }
+
+    private static RequestSpecification getRequestSpecificationPost(String endPoint, JSONObject requestPayload, Map<String, String> headers) {
         return RestAssured.given()
                 .baseUri(endPoint)
                 .contentType(ContentType.JSON)
@@ -49,16 +56,16 @@ public class RestUtils {
         printResponseInfoInLogReport(response);
     }
 
-    public static Response performPost(String endPoint, String requestPayload, Map<String, String> headers) {
-        RequestSpecification requestSpecification = getRequestSpecification(endPoint, requestPayload, headers);
+    public static Response performPost(String endPoint, JSONObject requestPayload, Map<String, String> headers) {
+        RequestSpecification requestSpecification = getRequestSpecificationPost(endPoint, requestPayload, headers);
         Response response = requestSpecification.post();
         printRequestResponseDetailsInLogReport(requestSpecification, response);
         return response;
     }
 
-    public static Response performPost(String endPoint, Map<String, Object> requestPayload, Map<String, String> headers) {
-        RequestSpecification requestSpecification = getRequestSpecification(endPoint, requestPayload, headers);
-        Response response = requestSpecification.post();
+    public static Response performGet(String endPoint, Map<String, String> headers, Map<String, String> queryParam) {
+        RequestSpecification requestSpecification = getRequestSpecificationGet(endPoint, headers, queryParam);
+        Response response = requestSpecification.get();
         printRequestResponseDetailsInLogReport(requestSpecification, response);
         return response;
     }

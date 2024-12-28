@@ -1,6 +1,7 @@
 package airlines;
 
 import io.restassured.response.Response;
+import org.json.simple.JSONObject;
 import restUtils.RestUtils;
 import utils.JsonUtils;
 
@@ -17,19 +18,17 @@ public class AirlinesApi {
         if (env == null) {
             env = "QA";
         }
-        Map<String, Object> dataMap = JsonUtils.getJsonDataAsMap("airlines/" + env + "/airlinesApiData.json");
-        return dataMap;
+        return JsonUtils.getJsonDataAsMap("airlines/" + env + "/airlinesApiData.json");
     }
 
-    public Response createAirlines(Map<String, Object> createAirlinePayload) throws IOException {
-        data = readApiEndPoint();
-        String endPoint = (String) data.get("CreateAirLineEndPoint");
-        return RestUtils.performPost(endPoint, createAirlinePayload, new HashMap<>());
+    public Response createAirLines(String endPoint, JSONObject requestPayload) {
+        return RestUtils.performPost(endPoint, requestPayload, new HashMap<>());
     }
 
-    public Response createPassengerByAirLineID(Map<String, Object> createPassengerByAirlineIdPayload) throws IOException {
-        data = readApiEndPoint();
-        String endPoint = (String) data.get("CreateAirLinePassenger");
-        return RestUtils.performPost(endPoint,createPassengerByAirlineIdPayload,new HashMap<>());
+    public Response getAirLineByAirlineID(String airLineId) throws IOException {
+       data = readApiEndPoint();
+       String endPoint = (String) data.get("CreateAirLineEndPoint");
+       String finalEndPoint = endPoint + "/" +airLineId;
+       return RestUtils.performGet(finalEndPoint,new HashMap<>(),new HashMap<>());
     }
 }

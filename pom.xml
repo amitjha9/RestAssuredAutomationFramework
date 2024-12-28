@@ -37,6 +37,7 @@
     <dataFakerVersion>2.4.2</dataFakerVersion>
     <lombokVersion>1.18.36</lombokVersion>
     <apacheCommonsVersion>3.17.0</apacheCommonsVersion>
+    <googleJsonVersion>1.1.1</googleJsonVersion>
   </properties>
 
   <dependencies>
@@ -87,6 +88,12 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>${apacheCommonsVersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>${googleJsonVersion}</version>
     </dependency>
 
   </dependencies>

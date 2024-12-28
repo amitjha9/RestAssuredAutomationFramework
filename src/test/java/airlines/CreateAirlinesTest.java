@@ -1,6 +1,7 @@
 package airlines;
 
 import io.restassured.response.Response;
+import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,8 +12,13 @@ public class CreateAirlinesTest extends AirlinesApi{
 
     @Test
     public void createAirlineTest() throws IOException {
-        Map<String, Object> requestPayload = Payloads.createAirlinePayloadFromMap("55668", "SpiceJet", "India", "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/sri_lanka.png", "From India", "Delhi India", "www.srilankaaairways.com", "2002");
-        Response response = createAirlines(requestPayload);
+
+        Map<String, Object> getData = AirlinesBaseTest.getAirlineApiEndPoint();
+        String endPoint = (String) getData.get("CreateAirLineEndPoint");
+
+        JSONObject jsonInputRequest = AirlinesBaseTest.getJsonInputRequestBody(this.getClass().getSimpleName());
+        JSONObject jsonAirlineRequestPayload = (JSONObject) jsonInputRequest.get("CreateLankaAirlineTestData");
+        Response response = createAirLines(endPoint,jsonAirlineRequestPayload);
         Assert.assertEquals(response.getStatusCode(), 200);
     }
 }

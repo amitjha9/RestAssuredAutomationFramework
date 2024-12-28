@@ -1,0 +1,42 @@
+{
+  "CreateLankaAirlineTestData": {
+    "id":"5476898990",
+    "name": "Sri Lankan Airways india",
+    "country": "Srilanka",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/sri_lanka.png",
+    "slogan": "From Srilanka",
+    "head_quaters": "Katunayake, Sri Lanka",
+    "website": "www.srilankaaairways.com",
+    "established": "1995"
+  },
+  "CreateIndianAirlineTestData": {
+    "id":"5476898991",
+    "name": "Indian Air India Airways india",
+    "country": "India",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/india.png",
+    "slogan": "From India",
+    "head_quaters": "Katunayake, India",
+    "website": "www.indianairways.com",
+    "established": "2000"
+  },
+  "CreatePakistanAirlineTestData":{
+    "id":"5476898992",
+    "name": "Pakistani Airline",
+    "country": "Pakistan",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/pakistan.png",
+    "slogan": "From Pakistan",
+    "head_quaters": "Katunayake, Pakistan",
+    "website": "www.pakistanairways.com",
+    "established": "2001"
+  },
+  "CreateAustralianAirlineTestData": {
+    "id":"5476898993",
+    "name": "Australian Airline",
+    "country": "Australia",
+    "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/australia.png",
+    "slogan": "From Australia",
+    "head_quaters": "Katunayake, Australia",
+    "website": "www.australiaairways.com",
+    "established": "2005"
+  }
+}
