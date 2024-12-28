@@ -1,0 +1,7 @@
+{
+  "CreatePassengerByAirLineIDTest": {
+    "name": "John Dell",
+    "trips": "250",
+    "airline": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19"
+  }
+}

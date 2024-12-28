@@ -9,6 +9,7 @@
         <classes>
             <class name="airlines.CreateAirlinesTest"/>
             <class name="airlines.CreatePassengerByAirlineIDTest"/>
+            <class name="airlines.GetAirlineByAirlineIDTest"/>
         </classes>
     </test>
 </suite>
