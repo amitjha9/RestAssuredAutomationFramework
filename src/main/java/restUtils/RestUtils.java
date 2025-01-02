@@ -32,7 +32,7 @@ public class RestUtils {
     private static void printRequestInfoInLogReport(RequestSpecification requestSpecification) {
         QueryableRequestSpecification queryableRequestSpecification = SpecificationQuerier.query(requestSpecification);
         queryableRequestSpecification.getBaseUri();
-        ExtentReportManager.logInfoDetails("API End Point is" + queryableRequestSpecification.getBaseUri());
+        ExtentReportManager.logInfoDetails("API End Point is:" + queryableRequestSpecification.getBaseUri());
         ExtentReportManager.logInfoDetails("Method is:" + queryableRequestSpecification.getMethod());
         ExtentReportManager.logInfoDetails("Request Headers are:");
         ExtentReportManager.logHeaders(queryableRequestSpecification.getHeaders().asList());

@@ -1,7 +1,27 @@
 {
-  "CreatePassengerByAirLineIDTest": {
+  "CreatePassengerByAirLineIDWithTrips250TestData": {
     "name": "John Dell",
     "trips": "250",
+    "airline": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19"
+  },
+  "CreatePassengerByAirLineIDWithTrips300TestData": {
+    "name": "Sam Kontas",
+    "trips": "300",
+    "airline": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19"
+  },
+  "CreatePassengerByAirLineIDWithTrips350TestData" : {
+    "name": "Josh Hazelwood",
+    "trips": "350",
+    "airline": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19"
+  },
+  "CreatePassengerByAirLineIDWithTrips400TestData": {
+    "name": "Steav Smith",
+    "trips": "400",
+    "airline": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19"
+  },
+  "CreatePassengerByAirLineIDWithTrips450TestData": {
+    "name": "Mitchel Starc",
+    "trips": "450",
     "airline": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19"
   }
 }
