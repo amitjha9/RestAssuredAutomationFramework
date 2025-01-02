@@ -1,6 +1,8 @@
 package airlines;
 
+import io.restassured.response.Response;
 import org.json.simple.JSONObject;
+import org.testng.Assert;
 import utils.JsonUtils;
 
 import java.io.IOException;
@@ -26,5 +28,9 @@ public class AirlinesBaseTest {
 
     public static JSONObject getJsonInputRequestBody(String className) {
         return JsonUtils.readJSONInputFileData("airlines/" + envName + "/" + className + ".json");
+    }
+
+    public static String readInputJsonTestData(JSONObject testInputJsonData) {
+        return testInputJsonData.toString();
     }
 }
