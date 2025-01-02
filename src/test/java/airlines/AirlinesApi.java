@@ -25,10 +25,7 @@ public class AirlinesApi {
         return RestUtils.performPost(endPoint, requestPayload, new HashMap<>());
     }
 
-    public Response getAirLineByAirlineID(String airLineId) throws IOException {
-       data = readApiEndPoint();
-       String endPoint = (String) data.get("CreateAirLineEndPoint");
-       String finalEndPoint = endPoint + "/" +airLineId;
-       return RestUtils.performGet(finalEndPoint,new HashMap<>(),new HashMap<>());
+    public Response getAirLines(String endPoint) {
+        return RestUtils.performGet(endPoint, new HashMap<>(), new HashMap<>());
     }
 }
