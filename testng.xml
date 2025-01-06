@@ -10,6 +10,8 @@
             <class name="airlines.CreateAirlinesTest"/>
             <class name="airlines.CreatePassengerByAirlineIDTest"/>
             <class name="airlines.GetAirlineByAirlineIDTest"/>
+            <class name="airlines.GetAllAirlinesTest"/>
+            <class name="airlines.GetPassengerByPassengerIDTest"/>
         </classes>
     </test>
 </suite>

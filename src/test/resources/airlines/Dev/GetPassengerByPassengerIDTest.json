@@ -1,0 +1,8 @@
+{
+  "GetIndianPassengerByPassengerIDTestData": {
+    "PassengerID": "677aa8397942bac4ec22da1b"
+  },
+  "GetAustralianPassengerByPassengerIDTestData": {
+    "PassengerID": "677aa8257942bafae122da18"
+  }
+}
