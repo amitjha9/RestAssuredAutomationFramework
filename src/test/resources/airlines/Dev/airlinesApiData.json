@@ -3,5 +3,7 @@
   "CreateAirLinePassenger": "https://api.instantwebtools.net/v1/passenger",
   "GetAirlineByAirlineID": "https://api.instantwebtools.net/v1/airlines/",
   "GetAllAirlines": "https://api.instantwebtools.net/v1/airlines",
-  "GetPassengerByPassengerID": "https://api.instantwebtools.net/v1/passenger/"
+  "GetPassengerByPassengerID": "https://api.instantwebtools.net/v1/passenger/",
+  "PatchUpdatePassengerByID": "https://api.instantwebtools.net/v1/passenger/",
+  "DeletePassengerByID": "https://api.instantwebtools.net/v1/passenger/"
 }

@@ -1,0 +1,40 @@
+{
+  "UpdatePassengerWithTrip2800ByIDTestData": {
+    "name": "Sanjay Jaiswal",
+    "trips": 2800,
+    "airline": [
+      {
+        "_id": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19",
+        "name": "Air India",
+        "country": "India",
+        "logo": "https://example.com/logos/indian_airlines.png",
+        "slogan": "Going for great",
+        "head_quaters": "Fort Worth, Texas",
+        "website": "https://www.aa.com",
+        "established": "2030"
+      }
+    ]
+  },
+  "UpdatePassengerWithTrip2900ByIDTestData": {
+    "name": "Saket Jaiswal",
+    "trips": 2900,
+    "airline": [
+      {
+        "_id": "73dd5420-3bf9-48f3-a0b6-17cf7aa61b19",
+        "name": "Air India",
+        "country": "India",
+        "logo": "https://example.com/logos/indian_airlines.png",
+        "slogan": "Going for great",
+        "head_quaters": "Fort Worth, Texas",
+        "website": "https://www.aa.com",
+        "established": "2030"
+      }
+    ]
+  },
+  "IndianPassengerTestData": {
+    "PassengerID": "677aa8397942bac4ec22da1b"
+  },
+  "AustralianPassengerTestData": {
+    "PassengerID": "677aa8257942bafae122da18"
+  }
+}

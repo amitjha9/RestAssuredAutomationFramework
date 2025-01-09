@@ -20,12 +20,18 @@ public class RestUtils {
                 .headers(headers);
     }
 
-    private static RequestSpecification getRequestSpecificationPost(String endPoint, JSONObject requestPayload, Map<String, String> headers) {
+    private static RequestSpecification getRequestSpecificationPostPutPatch(String endPoint, JSONObject requestPayload, Map<String, String> headers, Map<String,String> queryParams) {
         return RestAssured.given()
                 .baseUri(endPoint)
                 .contentType(ContentType.JSON)
                 .headers(headers)
+                .queryParams(queryParams)
                 .body(requestPayload);
+    }
+
+    private static RequestSpecification getRequestSpecificationDelete(String endPoint) {
+        return RestAssured.given()
+                .baseUri(endPoint);
     }
 
     //This method is for printing the request info details in extent report
@@ -56,8 +62,8 @@ public class RestUtils {
         printResponseInfoInLogReport(response);
     }
 
-    public static Response performPost(String endPoint, JSONObject requestPayload, Map<String, String> headers) {
-        RequestSpecification requestSpecification = getRequestSpecificationPost(endPoint, requestPayload, headers);
+    public static Response performPost(String endPoint, JSONObject requestPayload, Map<String, String> headers, Map<String,String> queryParams) {
+        RequestSpecification requestSpecification = getRequestSpecificationPostPutPatch(endPoint, requestPayload, headers,queryParams);
         Response response = requestSpecification.post();
         printRequestResponseDetailsInLogReport(requestSpecification, response);
         return response;
@@ -66,6 +72,27 @@ public class RestUtils {
     public static Response performGet(String endPoint, Map<String, String> headers, Map<String, String> queryParam) {
         RequestSpecification requestSpecification = getRequestSpecificationGet(endPoint, headers, queryParam);
         Response response = requestSpecification.get();
+        printRequestResponseDetailsInLogReport(requestSpecification, response);
+        return response;
+    }
+
+    public static Response performPut(String endPoint, JSONObject requestPayload, Map<String, String> headers, Map<String, String> queryParam) {
+        RequestSpecification requestSpecification = getRequestSpecificationPostPutPatch(endPoint, requestPayload, headers, queryParam);
+        Response response = requestSpecification.put();
+        printRequestResponseDetailsInLogReport(requestSpecification, response);
+        return response;
+    }
+
+    public static Response performPatch(String endPoint, JSONObject requestPayload, Map<String, String> headers, Map<String, String> queryParam) {
+        RequestSpecification requestSpecification = getRequestSpecificationPostPutPatch(endPoint, requestPayload, headers, queryParam);
+        Response response = requestSpecification.patch();
+        printRequestResponseDetailsInLogReport(requestSpecification, response);
+        return response;
+    }
+
+    public static Response performDelete(String endPoint) {
+        RequestSpecification requestSpecification = getRequestSpecificationDelete(endPoint);
+        Response response = requestSpecification.delete();
         printRequestResponseDetailsInLogReport(requestSpecification, response);
         return response;
     }
