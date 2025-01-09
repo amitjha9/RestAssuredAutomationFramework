@@ -12,6 +12,8 @@
             <class name="airlines.GetAirlineByAirlineIDTest"/>
             <class name="airlines.GetAllAirlinesTest"/>
             <class name="airlines.GetPassengerByPassengerIDTest"/>
+            <class name="airlines.UpdatePassengerByPassengerIDTest"/>
+            <class name="airlines.DeletePassengerByPassengerIDTest"/>
         </classes>
     </test>
 </suite>

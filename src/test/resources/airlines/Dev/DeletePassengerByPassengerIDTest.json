@@ -1,0 +1,8 @@
+{
+  "DeleteIndianPassengerByPassengerIDTestData": {
+    "PassengerID": "677f9b2c2211fa5b71bd7f98"
+  },
+  "DeleteAustralianPassengerByPassengerIDTestData": {
+    "PassengerID": "677f9b442211fa9396bd7f9b"
+  }
+}
