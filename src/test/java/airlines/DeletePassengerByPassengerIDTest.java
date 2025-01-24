@@ -36,5 +36,7 @@ public class DeletePassengerByPassengerIDTest extends AirlinesApi{
 
         Response response = deleteAirLine(endPoint);
         Assert.assertEquals(response.getStatusCode(),200);
+
+        //Just Assert
     }
 }
